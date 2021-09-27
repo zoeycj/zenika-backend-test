@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <style>
+    td,
+    th {
+      font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+      padding: 4px 0;
+      font-size: 14px;
+      border-top: 1px solid #000000;
+    }
+    .header-row {
+      background-color: #c0c0c0;
+    }
+
+    .side-spacing-8 {
+      padding: 0px 8px;
+    }
+
+    .center {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1 class="center"><%= title %></h1>
+    <div class="row">
+      <div class="col-xs-12">
+        <table width="100%">
+          <tr class="header-row">
+            <th width="10%" class="side-spacing-8 center">Name</th>
+            <th width="10%" class="side-spacing-8 center">Price</th>
+            <th width="10%" class="side-spacing-8 center">Rating</th>
+            <th width="50%" class="side-spacing-8 center">Description</th>
+            <th width="10%" class="side-spacing-8 center">Image url</th>
+            <th width="10%" class="side-spacing-8 center">Id</th>
+          </tr>
+          <% for(var i=0; i < data.length; i ++) {%>
+          <tr style="border-bottom: 1px solid">
+            <td class="side-spacing-8 center">
+              <%= data[i].name ? data[i].name : "" %>
+            </td>
+            <td class="side-spacing-8 center">
+              <%= data[i].price ? data[i].price : "" %>
+            </td>
+            <td class="side-spacing-8 center">
+              <%= data[i].rating ? data[i].rating : "" %>
+            </td>
+            <td class="side-spacing-8">
+              <%= data[i].description ? data[i].description : "" %>
+            </td>
+            <td class="side-spacing-8">
+              <%= data[i].image ? data[i].image : "" %>
+            </td>
+            <td class="side-spacing-8"><%= data[i].id ? data[i].id : "" %></td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
